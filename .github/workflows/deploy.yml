@@ -15,18 +15,14 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Verificar pasta atual
-      run: pwd
     - name: Mudar para a pasta desejada
       run: cd IMC
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: '8.0.x'
-    - name: Verificar pasta atual novamente
-      run: pwd
     - name: Publish with dotnet
-      run: dotnet publish --configuration Release --output dist
+      run: dotnet publish IMC/IMC.csproj --configuration Release --output dist
     # changes the base-tag in index.html from '/' to 'IMC' to match GitHub Pages repository subdirectory
     - name: Change base-tag in index.html from / to IMC
       run: sed -i 's/<base href="\/" \/>/<base href="\/IMC\/" \/>/g' dist/wwwroot/index.html

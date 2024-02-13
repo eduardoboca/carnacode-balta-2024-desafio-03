@@ -1,4 +1,5 @@
 ﻿@page "/"
+
 @using IMC.Model
 @using IMC.Repositorio
 @inject NavigationManager navi;
@@ -30,7 +31,7 @@
         var imcResultRepository = new ImcRepositorio(LocalStorage);
         imcResultRepository.Create(p);
         var history = imcResultRepository.Get();
-        navi.NavigateTo("/history");
+        navi.NavigateTo("./history");
 
     }
 }

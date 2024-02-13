@@ -8,9 +8,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Img\**" />
     <Compile Remove="NovaPasta\**" />
+    <Content Remove="Img\**" />
     <Content Remove="NovaPasta\**" />
+    <EmbeddedResource Remove="Img\**" />
     <EmbeddedResource Remove="NovaPasta\**" />
+    <None Remove="Img\**" />
     <None Remove="NovaPasta\**" />
   </ItemGroup>
 
@@ -26,10 +30,6 @@
 
   <ItemGroup>
     <ServiceWorker Include="wwwroot\service-worker.js" PublishedContent="wwwroot\service-worker.published.js" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Img\" />
   </ItemGroup>
 
   <ItemGroup>
